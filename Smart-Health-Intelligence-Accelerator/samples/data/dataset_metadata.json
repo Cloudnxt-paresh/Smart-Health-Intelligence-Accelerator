@@ -1,0 +1,14 @@
+{
+  "project": "Smart Health Intelligence Platform Demo",
+  "data_classification": "SYNTHETIC - NOT FOR CLINICAL USE",
+  "patients": 10,
+  "screenings": 18,
+  "parameters": 32,
+  "lab_results": 576,
+  "clinical_observations": 40,
+  "notes": [
+    "All names and results are synthetic.",
+    "Reference ranges are invented for demonstration and must not be used for medical decisions.",
+    "Statuses are calculated only against each row's supplied demo range."
+  ]
+}

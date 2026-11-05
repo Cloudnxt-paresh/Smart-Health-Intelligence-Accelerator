@@ -1,0 +1,17 @@
+Total Parameters =
+SUM(gold_screening_summary[TotalParameters])
+
+Within Range =
+SUM(gold_screening_summary[WithinRangeCount])
+
+High Results =
+SUM(gold_screening_summary[HighCount])
+
+Low Results =
+SUM(gold_screening_summary[LowCount])
+
+Outside Range =
+SUM(gold_screening_summary[OutsideRangeCount])
+
+Within Range % =
+DIVIDE([Within Range], [Total Parameters], 0)

@@ -1,0 +1,11 @@
+﻿PatientID,PatientName,DateOfBirth,Sex,City,DataLabel
+HC001,Aarav Sharma,1985-04-12,M,Pune,SYNTHETIC
+HC002,Ananya Iyer,1992-09-25,F,Mumbai,SYNTHETIC
+HC003,Rohan Mehta,1978-01-18,M,Pune,SYNTHETIC
+HC004,Meera Nair,1988-07-03,F,Bengaluru,SYNTHETIC
+HC005,Kabir Joshi,1995-11-21,M,Nashik,SYNTHETIC
+HC006,Ishita Rao,1969-02-14,F,Pune,SYNTHETIC
+HC007,Vivaan Kulkarni,1982-06-09,M,Nagpur,SYNTHETIC
+HC008,Diya Deshmukh,2000-12-30,F,Mumbai,SYNTHETIC
+HC009,Arjun Patil,1975-08-16,M,Pune,SYNTHETIC
+HC010,Saanvi Kapoor,1990-03-28,F,Delhi,SYNTHETIC

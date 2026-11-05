@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Synthetic Lab Result",
+  "type": "object",
+  "required": ["ResultID", "ScreeningID", "PatientID", "ParameterCode", "MeasuredValue", "Unit", "TestDate", "SourceReport"],
+  "properties": {
+    "ResultID": {"type": "string"},
+    "ScreeningID": {"type": "string"},
+    "PatientID": {"type": "string"},
+    "ParameterCode": {"type": "string"},
+    "ParameterName": {"type": "string"},
+    "TestCategory": {"type": "string"},
+    "MeasuredValue": {"type": ["number", "null"]},
+    "Unit": {"type": "string"},
+    "ReferenceLow": {"type": ["number", "null"]},
+    "ReferenceHigh": {"type": ["number", "null"]},
+    "ResultStatus": {"enum": ["WITHIN RANGE", "HIGH", "LOW", "MISSING", "NO REFERENCE RANGE"]},
+    "TestDate": {"type": "string", "format": "date"},
+    "SourceReport": {"type": "string"}
+  },
+  "additionalProperties": true
+}

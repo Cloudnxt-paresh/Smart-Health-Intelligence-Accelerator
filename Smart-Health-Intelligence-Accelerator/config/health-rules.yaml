@@ -1,0 +1,17 @@
+project: Smart Health Intelligence
+classification: SYNTHETIC_DEMO_ONLY
+status_values:
+  - WITHIN RANGE
+  - HIGH
+  - LOW
+  - MISSING
+  - NO REFERENCE RANGE
+rules:
+  - measured_value_below_reference_low: LOW
+  - measured_value_above_reference_high: HIGH
+  - measured_value_between_inclusive_bounds: WITHIN RANGE
+safety:
+  diagnosis_allowed: false
+  prescribe_treatment_allowed: false
+  invent_missing_values_allowed: false
+  source_citation_required_for_ai: true
