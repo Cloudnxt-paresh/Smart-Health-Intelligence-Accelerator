@@ -1,0 +1,48 @@
+name: Publish Smart Health Intelligence Package
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Convert repository owner to lowercase
+        id: repo
+        run: |
+          echo "owner=${GITHUB_REPOSITORY_OWNER,,}" >> $GITHUB_OUTPUT
+          echo "name=${GITHUB_REPOSITORY#*/}" | tr '[:upper:]' '[:lower:]' | sed 's/^/name=/' >> $GITHUB_OUTPUT
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and publish package
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/${{ steps.repo.outputs.owner }}/${{ steps.repo.outputs.name }}:latest
+            ghcr.io/${{ steps.repo.outputs.owner }}/${{ steps.repo.outputs.name }}:${{ github.ref_name }}
+          labels: |
+            org.opencontainers.image.title=Smart Health Intelligence Accelerator
+            org.opencontainers.image.description=Microsoft Fabric Healthcare Analytics Solution Accelerator
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
